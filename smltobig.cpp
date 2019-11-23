@@ -4,6 +4,7 @@
 #include <iomanip>
 
 using namespace std;
+void printVals(int i, int numberArray[20], int inputCount );
 
 int main()
 {
@@ -13,6 +14,7 @@ int main()
  //in a loop that runs for no more than ARRAYSIZE times
   nVal = 0; 
   inputCount = 0;
+
 for (i = 0; i < 20; i++) 
   {
     cout << "gimme int" << endl;
@@ -33,17 +35,21 @@ for (i = 0; i < 20; i++)
     if (numberArray[i] >= 0)
       {
       nVal = nVal + 1;
-      } 
+      }
+    //passing the array into printvals sucks
   }
-
-  
-  cout << "there are x number of values: ";
-  for ( i = 0; i < inputCount - 1; i++)
-   {
-  //the first char of numberArray is zero   
-   cout << numberArray[i] << ", ";
-   }
-  cout << "Inputcount is " << inputCount << endl;
- cout << "what it will do" << endl;
+   
+    printVals(i, numberArray, inputCount); 
 return 0;
 }
+
+void printVals(int i, int numberArray[], int inputCount)
+{
+  cout << "int i" << i << endl;
+  cout << "inputCount" << inputCount << endl;
+  cout << "there are x number of values: ";
+  for ( i = 0; i < inputCount - 1; i++)
+  {
+   cout << numberArray[i] << ", ";
+  }
+};
