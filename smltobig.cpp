@@ -8,26 +8,35 @@ using namespace std;
 int main()
 {
  int ARRAYSIZE[20];
- int i, number;
-
+ int i, usrInput, numberIndex, numberArray[20];
+ numberIndex = 0;
  //in a loop that runs for no more than ARRAYSIZE times
  for (i = 0; i < 20; i++) 
   {
-    //lol a priori weirdness :re checking number/declaring number
-    //breakout @ 0
-      do {
-      if (number == 0)
-      {
-       break;
-      }      
-    cout << "regret this" << endl;
     cout << "gimme int" << endl;
-    cin >> number;
-    cout << "regreted that" << endl; 
-    }
-    while(number !=0);
- }
+    
+     //put the number into numberArray
+    cin >> usrInput;
+    cout << "numberIndex is " << numberIndex;
+  
+     
+    numberIndex++; //increments row position (starting at 0)
+    if (usrInput == 0) //if usrInput is 0 gtfo
+      {
+      break;
+      }
+  
+   numberArray[numberIndex] = usrInput;    
+   cout << "ugh" << endl; 
+   }
 
+  cout << "qa print" << endl; 
+//qa to print all values 
+  for (i = 0; i < 20; i++)
+  {
+  cout << numberArray[i] << endl;
+
+  }
  cout << "what it will do" << endl;
 return 0;
 }
