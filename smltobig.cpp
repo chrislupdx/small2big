@@ -5,6 +5,7 @@
 
 using namespace std;
 void printVals(int i, int numberArray[20], int inputCount, int nVal);
+int swapVals(int& first, int& second);
 
 int main()
 {
@@ -37,25 +38,29 @@ for (i = 0; i < 20; i++)
       {
       nVal = nVal + 1;
       }
-  }
+  } 
+    //how should we transform the values so swapVals can take them 
+    swapVals();
+      
+return 0;
+}
 
+int swapVals(int& first, int& second)
+{
 //for the ordinal length of the array, traverse and swap
     for (i = 0; i < nVal - 1; i++)
-    {
-      //if the current number > next number
+   {
+      //if the current number > next number 
       if (numberArray[i] > numberArray[i + 1])
       {
       //store the OG values then swap positions 
       int greater = numberArray[i];
       int less = numberArray[i + 1];
       numberArray[i] = less;
-      numberArray[i + 1] = greater;
-
-      } 
-    }
-
-      printVals(i, numberArray, inputCount, nVal); 
-return 0;
+      numberArray[i + 1] = greater; 
+     }
+    printVals(i, numberArray, inputCount, nVal);
+   }
 }
 
 void printVals(int i, int numberArray[], int inputCount, int nVal)
@@ -64,6 +69,7 @@ void printVals(int i, int numberArray[], int inputCount, int nVal)
   cout << "inputCount" << inputCount << endl;
   cout << "nval - 1 is " << nVal - 1 << endl;
   cout << "there are " << inputCount -1 << " values: ";
+//how do we print the originals, easiest way would be to store it on initialization/hits zero
   for ( i = 0; i < nVal; i++)
   { 
      cout << numberArray[i] << ", ";
