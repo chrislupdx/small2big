@@ -4,8 +4,8 @@
 #include <iomanip>
 
 using namespace std;
-void printVals(int i, int numberArray[20], int inputCount, int nVal);
-int swapVals(int& first, int& second);
+void printVals(int i, int numberArray[20], int nVal);
+int swapVals(int numberArray[20], int& nVal);
 
 int main()
 {
@@ -15,7 +15,6 @@ int main()
  //in a loop that runs for no more than ARRAYSIZE times
   nVal = 0; 
   inputCount = 0;
-// cout << "this is what it will do" << endl;
 //this loops produces an array out of user requests, records positive vals
 for (i = 0; i < 20; i++) 
   {
@@ -38,17 +37,16 @@ for (i = 0; i < 20; i++)
       {
       nVal = nVal + 1;
       }
-  } 
-    //how should we transform the values so swapVals can take them 
-    swapVals();
+  }
+   swapVals(numberArray, nVal);
       
 return 0;
 }
 
-int swapVals(int& first, int& second)
+int swapVals(int numberArray[], int& nVal)
 {
 //for the ordinal length of the array, traverse and swap
-    for (i = 0; i < nVal - 1; i++)
+    for (int i = 0; i < nVal - 1; i++)
    {
       //if the current number > next number 
       if (numberArray[i] > numberArray[i + 1])
@@ -59,17 +57,15 @@ int swapVals(int& first, int& second)
       numberArray[i] = less;
       numberArray[i + 1] = greater; 
      }
-    printVals(i, numberArray, inputCount, nVal);
+    printVals(i, numberArray, nVal);
    }
 }
 
-void printVals(int i, int numberArray[], int inputCount, int nVal)
+void printVals(int i, int numberArray[], int nVal)
 {
   cout << endl;
-  cout << "inputCount" << inputCount << endl;
-  cout << "nval - 1 is " << nVal - 1 << endl;
-  cout << "there are " << inputCount -1 << " values: ";
-//how do we print the originals, easiest way would be to store it on initialization/hits zero
+  
+  cout << "there are " << nVal << " chars: ";
   for ( i = 0; i < nVal; i++)
   { 
      cout << numberArray[i] << ", ";
