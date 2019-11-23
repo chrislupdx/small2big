@@ -45,10 +45,11 @@ return 0;
 
 int swapVals(int numberArray[], int& nVal)
 {
+  cout << "there are " << nVal << " chars: ";
     //outer loop runs the sorting pattern for the # of vals
     for (int i = 0; i < nVal -1; i++)
    {
-//for the ordinal length of the array, traverse and swap
+    //for the ordinal length of the array, traverse and swap
     for (int i = 0; i < nVal - 1; i++)
    {
       //if the current number > next number 
@@ -60,7 +61,7 @@ int swapVals(int numberArray[], int& nVal)
       numberArray[i] = less; //this currently doesn't swap ALL of the vals
       numberArray[i + 1] = greater;  
       } 
-   } 
+   }  
     printVals(numberArray, nVal);
   }
 }
@@ -68,7 +69,6 @@ int swapVals(int numberArray[], int& nVal)
 void printVals(int numberArray[], int nVal)
 {
   cout << endl;
-  cout << "there are " << nVal << " chars: ";
   for (int i = 0; i < nVal; i++)
   { 
      cout << numberArray[i] << ", ";
