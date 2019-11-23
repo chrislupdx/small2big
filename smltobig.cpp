@@ -45,6 +45,9 @@ return 0;
 
 int swapVals(int numberArray[], int& nVal)
 {
+    //outer loop runs the sorting pattern for the # of vals
+    for (int i = 0; i < nVal -1; i++)
+   {
 //for the ordinal length of the array, traverse and swap
     for (int i = 0; i < nVal - 1; i++)
    {
@@ -55,11 +58,11 @@ int swapVals(int numberArray[], int& nVal)
       int greater = numberArray[i];
       int less = numberArray[i + 1];
       numberArray[i] = less; //this currently doesn't swap ALL of the vals
-      numberArray[i + 1] = greater; 
-     }
-   }
-
+      numberArray[i + 1] = greater;  
+      } 
+   } 
     printVals(numberArray, nVal);
+  }
 }
 
 void printVals(int numberArray[], int nVal)
