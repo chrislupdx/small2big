@@ -15,6 +15,7 @@ int main()
   nVal = 0; 
   inputCount = 0;
 // cout << "this is what it will do" << endl;
+//this loops produces an array out of user requests, records positive vals
 for (i = 0; i < 20; i++) 
   {
     cout << "gimme int" << endl;
@@ -38,25 +39,18 @@ for (i = 0; i < 20; i++)
       }
     //passing the array into printvals sucks
   }
-   //what is nVal - inputCount and why are we doing it 
+
+//for the ordinal length of the array, traverse and swap
     for (i = 0; i < nVal - 1; i++)
     {
-    eOLine = inputCount;
-    cout << eOLine << "is eOLine" << endl;
-    if (numberArray[i] > numberArray[i + 1])
+      //if the current number > next number
+      if (numberArray[i] > numberArray[i + 1])
       {
-          if ( i + 1 >= eOLine)
-          {
-          cout << "i + 1 >= eoLine" << endl;
-            break;
-          }     
-          //how do we detect end of line?
-     //do we need holidng vars to retain consistency
-          numberArray[i] = numberArray[i + 1];
-    //      cout << "numberArray[" << i << "] is: " << numberArray[i] << endl;
-          numberArray[i + 1] = numberArray[i];
-    //      cout << "numberArray[" << i << "+1] is: " << numberArray[i + 1] << endl; 
-       } 
+      // cout << numberArray[i] << " > " << numberArray[i + 1] << endl;
+//       numberArray[i] = numberArray[i + 1];   
+
+//      cout << "i + 1 is " << i + 1 << endl;
+      } 
     }
 
     printVals(i, numberArray, inputCount, nVal); 
@@ -66,12 +60,17 @@ return 0;
 void printVals(int i, int numberArray[], int inputCount, int nVal)
 {
   cout << endl;
-  cout << "int i" << i << endl;
+ // cout << "int i" << i << endl;  //we use i 2-3 times, might need better context
   cout << "inputCount" << inputCount << endl;
   cout << "nval is " << nVal << endl;
   cout << "there are x number of values: ";
-  for ( i = 0; i < inputCount - 1; i++)
-  {
-   cout << numberArray[i] << ", ";
+  for ( i = 0; i < nVal; i++)
+  { 
+     cout << numberArray[i] << ", ";
+     //when we reach the end of the list, endl
+     if (i == nVal - 1)
+     {
+      cout << endl;
+     }
   }
 };
