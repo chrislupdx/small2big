@@ -4,7 +4,7 @@
 #include <iomanip>
 
 using namespace std;
-void printVals(int i, int numberArray[20], int nVal);
+void printVals(int numberArray[20], int nVal);
 int swapVals(int numberArray[20], int& nVal);
 
 int main()
@@ -54,19 +54,19 @@ int swapVals(int numberArray[], int& nVal)
       //store the OG values then swap positions 
       int greater = numberArray[i];
       int less = numberArray[i + 1];
-      numberArray[i] = less;
+      numberArray[i] = less; //this currently doesn't swap ALL of the vals
       numberArray[i + 1] = greater; 
      }
-    printVals(i, numberArray, nVal);
    }
+
+    printVals(numberArray, nVal);
 }
 
-void printVals(int i, int numberArray[], int nVal)
+void printVals(int numberArray[], int nVal)
 {
   cout << endl;
-  
   cout << "there are " << nVal << " chars: ";
-  for ( i = 0; i < nVal; i++)
+  for (int i = 0; i < nVal; i++)
   { 
      cout << numberArray[i] << ", ";
      //when we reach the end of the list, endl to prevent junk char
