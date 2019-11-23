@@ -9,7 +9,7 @@ void printVals(int i, int numberArray[20], int inputCount, int nVal);
 int main()
 {
  int ARRAYSIZE[20];
- int i, usrInput, eOLine, inputCount, numberIndex, nVal, numberArray[20];
+ int i, greater, less, usrInput, eOLine, inputCount, numberIndex, nVal, numberArray[20];
  numberIndex = 0;
  //in a loop that runs for no more than ARRAYSIZE times
   nVal = 0; 
@@ -37,7 +37,6 @@ for (i = 0; i < 20; i++)
       {
       nVal = nVal + 1;
       }
-    //passing the array into printvals sucks
   }
 
 //for the ordinal length of the array, traverse and swap
@@ -46,28 +45,29 @@ for (i = 0; i < 20; i++)
       //if the current number > next number
       if (numberArray[i] > numberArray[i + 1])
       {
-      // cout << numberArray[i] << " > " << numberArray[i + 1] << endl;
-//       numberArray[i] = numberArray[i + 1];   
+      //store the OG values then swap positions 
+      int greater = numberArray[i];
+      int less = numberArray[i + 1];
+      numberArray[i] = less;
+      numberArray[i + 1] = greater;
 
-//      cout << "i + 1 is " << i + 1 << endl;
       } 
     }
 
-    printVals(i, numberArray, inputCount, nVal); 
+      printVals(i, numberArray, inputCount, nVal); 
 return 0;
 }
 
 void printVals(int i, int numberArray[], int inputCount, int nVal)
 {
   cout << endl;
- // cout << "int i" << i << endl;  //we use i 2-3 times, might need better context
   cout << "inputCount" << inputCount << endl;
-  cout << "nval is " << nVal << endl;
-  cout << "there are x number of values: ";
+  cout << "nval - 1 is " << nVal - 1 << endl;
+  cout << "there are " << inputCount -1 << " values: ";
   for ( i = 0; i < nVal; i++)
   { 
      cout << numberArray[i] << ", ";
-     //when we reach the end of the list, endl
+     //when we reach the end of the list, endl to prevent junk char
      if (i == nVal - 1)
      {
       cout << endl;
