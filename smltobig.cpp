@@ -37,24 +37,53 @@ for (i = 0; i < 20; i++)
       }
   }
  cout << "there are " << nVal << " chars" << endl;
- 
-//how do we decouple the loop below form nVal and numberArray dependency 
+
+  //iterate through the array 
   for (i = 0; i < nVal -1; i++)
   {
-   if (numberArray[i] > numberArray[i + 1])
-    {
-      int greater = numberArray[i];
-      int less = numberArray[i + 1];
-      numberArray[i] = less;
-      numberArray[i + 1] = greater;
-    }
-  }   
+   int arrVPlus = numberArray[i + 1];
+   int arrV = numberArray[i]; 
+
+//  cout << "i before" << numberArray[i] << endl;
+//  cout << "i +1 before "<< numberArray[i + 1] << endl;
+
+
+   swapVals(arrV, arrVPlus);  
+//   cout << "arrVPlus after " << arrVPlus << endl; 
+//   cout << "arrV " << arrV << endl; 
+  //assign swapped vals to array   
+    arrVPlus = numberArray[i];
+    arrV = numberArray[i + 1];
+//   numberArray[i] = arrVPlus;
+//   numberArray[i + 1] = arrV;
+//  cout << "i after" << numberArray[i] << endl;
+//  cout << "i+1 after" << numberArray[i + 1] << endl;
+
+  }  
+ 
  printVals(numberArray , nVal);
  return 0;
 }
 
 int swapVals(int& first, int& second)
 {
+   cout << "first before is" << first << endl;
+   cout << "second before " << second << endl;
+   int first1 = first;
+   int second1 = second;
+   
+  if (first > second)
+  {    
+    first = second1;
+    second = first1;
+    cout << "first after is " << first << endl;   
+    cout << "second after " << second << endl;
+  return 1;
+  }
+  else
+  {
+  return 0;
+  } 
 }
 
 void printVals(int numberArray[], int nVal)
