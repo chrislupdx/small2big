@@ -12,13 +12,13 @@ int main()
  int ARRAYSIZE[20];
  int i, greater, less, usrInput, eOLine, inputCount, numberIndex, nVal, numberArray[20];
  numberIndex = 0;
-  nVal = 0; 
-  inputCount = 0;
+ nVal = 0; 
+ inputCount = 0;
 //this loops produces an array out of user requests, records positive vals
 for (i = 0; i < 20; i++) 
   {
     cout << "gimme int" << endl;
-     //put the number into numberArray
+    //put the number into numberArray
     cin >> usrInput;    
     if (usrInput == 0) //if usrInput is 0 gtfo
       {
@@ -37,21 +37,24 @@ for (i = 0; i < 20; i++)
       }
   }
  cout << "there are " << nVal << " chars" << endl;
- printVals(numberArray , nVal);
  
-return 0;
+//how do we decouple the loop below form nVal and numberArray dependency 
+  for (i = 0; i < nVal -1; i++)
+  {
+   if (numberArray[i] > numberArray[i + 1])
+    {
+      int greater = numberArray[i];
+      int less = numberArray[i + 1];
+      numberArray[i] = less;
+      numberArray[i + 1] = greater;
+    }
+  }   
+ printVals(numberArray , nVal);
+ return 0;
 }
 
 int swapVals(int& first, int& second)
 {
-  cout << "first is" << first << endl;
-  cout << "second is" << second << endl;
-  if (first > second)
-  { 
-    return 1;
-  }
-  else
-  return 0;
 }
 
 void printVals(int numberArray[], int nVal)
