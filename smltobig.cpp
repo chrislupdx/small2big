@@ -10,7 +10,7 @@ int swapVals(int& first, int& second);
 int main()
 {
  int ARRAYSIZE[20];
- int i, greater, less, usrInput, eOLine, inputCount, numberIndex, nVal, numberArray[20];
+ int i, x, greater, less, usrInput, eOLine, inputCount, numberIndex, nVal, numberArray[20];
  numberIndex = 0;
  nVal = 0; 
  inputCount = 0;
@@ -36,16 +36,15 @@ for (i = 0; i < 20; i++)
       nVal = nVal + 1;
       }
   }
- cout << "there are " << nVal << " chars" << endl;
-
-  //iterate through the array 
-  for (i = 0; i < nVal -1; i++)
-  {
-   swapVals(numberArray[i], numberArray[i + 1]);
-  }  
- 
- printVals(numberArray , nVal);
- return 0;
+    for ( x = 0; x < nVal -1; x++)
+    {
+     for (i = 0; i < nVal -1; i++)
+     {
+     swapVals(numberArray[i], numberArray[i + 1]);
+     }  
+     printVals(numberArray , nVal);
+    }
+return 0;
 }
 
 int swapVals(int& first, int& second)
@@ -82,4 +81,4 @@ void printVals(int numberArray[], int nVal)
       cout << endl;
      }
   }
-};
+}
