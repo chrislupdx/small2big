@@ -36,6 +36,7 @@ for (i = 0; i < 20; i++)
       nVal = nVal + 1;
       }
   }
+   cout << "there are " << nVal << " values." << endl;
     for ( x = 0; x < nVal -1; x++)
     {
      for (i = 0; i < nVal -1; i++)
