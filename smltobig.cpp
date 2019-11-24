@@ -43,23 +43,28 @@ for (i = 0; i < 20; i++)
   {
    int arrVPlus = numberArray[i + 1];
    int arrV = numberArray[i]; 
+   
+//   cout << "arrV b4 " << arrV << endl;
+//   cout << "arrVP b4 " << arrVPlus << endl;
 
-//  cout << "i before" << numberArray[i] << endl;
-//  cout << "i +1 before "<< numberArray[i + 1] << endl;
+//   cout << "i before " << numberArray[i] << endl;
+//   cout << "i+1 before " << numberArray[i + 1] << endl;
 
+//   swapVals(arrV, arrVPlus);   
+     swapVals(numberArray[i], numberArray[i + 1]);
 
-   swapVals(arrV, arrVPlus);  
-//   cout << "arrVPlus after " << arrVPlus << endl; 
-//   cout << "arrV " << arrV << endl; 
-  //assign swapped vals to array   
-    arrVPlus = numberArray[i];
-    arrV = numberArray[i + 1];
-//   numberArray[i] = arrVPlus;
-//   numberArray[i + 1] = arrV;
-//  cout << "i after" << numberArray[i] << endl;
-//  cout << "i+1 after" << numberArray[i + 1] << endl;
+//apparently we forgot how to assign things into arrays
+//  numberArray[i] = arrVPlus;
+//  numberArray[i + 1] = arrV;
 
-  }  
+//    cout << "arrV after " << arrV << endl;
+//    cout << "arrVP after " << arrVPlus << endl;
+    
+
+//    cout << "i after" << numberArray[i] << endl;
+//    cout << "i+1 after" << numberArray[i + 1] << endl;
+
+ }  
  
  printVals(numberArray , nVal);
  return 0;
@@ -67,8 +72,8 @@ for (i = 0; i < 20; i++)
 
 int swapVals(int& first, int& second)
 {
-   cout << "first before is" << first << endl;
-   cout << "second before " << second << endl;
+//    cout << "first before " << first << endl;
+//    cout << "second before " << second << endl;
    int first1 = first;
    int second1 = second;
    
@@ -76,9 +81,9 @@ int swapVals(int& first, int& second)
   {    
     first = second1;
     second = first1;
-    cout << "first after is " << first << endl;   
-    cout << "second after " << second << endl;
-  return 1;
+//    cout << "first after " << first << endl;
+//    cout << "second after " << second << endl;
+   return 1;
   }
   else
   {
